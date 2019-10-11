@@ -13,6 +13,7 @@ import framework.view3D.Camera3D;
 
 public class TemplateQuizGame extends SimpleScenarioGame {
 	private RWTFrame3D frame;
+	int life = 3;//残機
 
 	@Override
 	public void init(Universe universe, Camera3D camera) {
@@ -49,8 +50,6 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	@Override
 	public void action(String action, Event event, ScenarioState nextState) {
 		// シナリオ進行による世界への作用をここに書く
-
-		int life = 3;//残機
 
 		if (action.equals("right")) {
 		} else if (action.equals("wrong")) {
