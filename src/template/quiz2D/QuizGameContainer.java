@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 
 import framework.RWT.RWTButton;
+import framework.RWT.RWTImage;
 import framework.RWT.RWTVirtualController;
 import framework.RWT.RWTVirtualKey;
 import framework.RWT.RWTWidget;
@@ -26,11 +27,17 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	@Override
 	public void build(GraphicsConfiguration gc) {
 		super.build(gc);
-		canvas.setRelativePosition(0.0f, 0.0f);		// 3D表示部の左上端
-		canvas.setRelativeSize(1.0f, 0.5f);		// 3D表示部のサイズ
+		canvas.setRelativePosition(0.0f, -0.3f);		// 3D表示部の左上端
+		canvas.setRelativeSize(1.0f, 0.95f);		// 3D表示部のサイズ
 		addCanvas(canvas);
 
-		dialog.setRelativePosition(0.3f, 0.7f);	// ダイアログの左上端
+		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
+		image.setRelativePosition(0.0f, 0.0f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+
+
+		dialog.setRelativePosition(0.3f, 0.8f);	// ダイアログ
 		dialog.setFont(new Font("", Font.PLAIN, 12));	// 文字のフォント
 		dialog.setColor(Color.WHITE);				// 文字の色
 		addWidget(dialog);
@@ -63,6 +70,7 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		optionButtons[3].setRelativeHeight(0.08f);
 		optionButtons[3].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[3], 1, 1);
+
 
 		repaint();
 	}
