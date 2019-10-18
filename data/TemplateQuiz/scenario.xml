@@ -1,42 +1,183 @@
 <Scenario>
 	<FSM name="クイズ" initial="開始前">
 		<State name="開始前">
-			<Event name="開始" action="openDialog" trans="一問目">
+			<Event name="開始" action="openDialog" trans="wave1開始会話">
 			</Event>
 		</State>
-		<State name="一問目" message="パンはパンでも食べられないパンは？">
-			<Event name="コッペパン" action="wrong" trans="終了">
+		<State name="wave1開始会話" message="こんにちは！今から問題を出すよ！！">
+		     <Event name="え！？は、はい" action="right" trans="w1一問目">
+		    </Event>
+		     <Event name="面倒くさい" action="right" trans="w1一問目">
+		    </Event>
+		     <Event name="かえりたいです" action="right" trans="w1一問目">
+		    </Event>
+		     <Event name="ねっむ" action="right" trans="w1一問目">
+		    </Event>
+		</State>
+		<State name="w1一問目" message="次のうち、存在しないのは？">
+
+			<Event name="長野県" action="wrong" trans="終了">
 			</Event>
-			<Event name="フランスパン" action="wrong" trans="終了">
+			<Event name="兵庫県" action="wrong" trans="終了">
 			</Event>
-			<Event name="フライパン" action="right" trans="二問目">
+			<Event name="大阪都" action="right" trans="w1二問目">
 			</Event>
-			<Event name="食パン" action="wrong" trans="終了">
+			<Event name="北海道" action="wrong" trans="終了">
 			</Event>
 		</State>
-		<State name="二問目" message="トリはトリでも飛べないトリは？">
-			<Event name="ワシ" action="wrong" trans="終了">
+		<State name="w1二問目" message="2020年のオリンピックの場所は？">
+			<Event name="東京都" action="right" trans="w1三問目">
 			</Event>
-			<Event name="チリトリ" action="right" trans="三問目">
+			<Event name="神奈川県" action="wrong" trans="終了">
 			</Event>
-			<Event name="ハト" action="wrong" trans="終了">
+			<Event name="京都府" action="wrong" trans="終了">
 			</Event>
-			<Event name="カラス" action="wrong" trans="終了">
-			</Event>
-		</State>
-		<State name="三問目" message="ふとんがhu？">
-			<Event name="ワシ" action="wrong" trans="終了">
-			</Event>
-			<Event name="ふっとんだ" action="right" trans="全問正解">
-			</Event>
-			<Event name="カニ" action="wrong" trans="終了">
-			</Event>
-			<Event name="カラス" action="wrong" trans="終了">
+			<Event name="宮城県" action="wrong" trans="終了">
 			</Event>
 		</State>
-		<State name="全問正解" message="おめでとう！！">
+		<State name="w1三問目" message="令和1年、いつから始まった？">
+			<Event name="2019年3月1日" action="wrong" trans="終了">
+			</Event>
+			<Event name="2019年5月1日" action="right" trans="wave1終了会話">
+			</Event>
+			<Event name="2019年4月1日" action="wrong" trans="終了">
+			</Event>
+			<Event name="2019年6月1日" action="wrong" trans="終了">
+			</Event>
 		</State>
-		<State name="終了" message="ゲームオーバー">
+		<State name="wave1終了会話" message="君って強いんだね！今度はもっと難しい問題を考えてくるからねっ！">
+		    <Event name="ま、またね・・・" action="right" trans="wave2開始会話">
+		    </Event>
+		     <Event name="面倒なんでもうやりたくないです" action="right" trans="wave2開始会話">
+		    </Event>
+		     <Event name="もういいですか" action="right" trans="wave2開始会話">
+		    </Event>
+		     <Event name="ふわぁあ" action="right" trans="wave2開始会話">
+		    </Event>
+		</State>
+		<State name="wave2開始会話" message="やぁ、次は僕が相手だ。負けないよ" >
+		    <Event name="つ、次があるんだ・・・" action="right" trans="w2一問目">
+		    </Event>
+		     <Event name="マジかよ、めんど" action="right" trans="w2一問目">
+		    </Event>
+		     <Event name="もう帰りたいんですけど" action="right" trans="w2一問目">
+		    </Event>
+		     <Event name="ホントねむい" action="right" trans="w2一問目">
+		    </Event>
+		</State>
+		<State name="w2一問目" message="甲南大学iCommonsが完成した日は？">
+			<Event name="2017年4月" action="wrong" trans="終了">
+			</Event>
+			<Event name="2017年10月" action="wrong" trans="終了">
+			</Event>
+			<Event name="2017年9月" action="right" trans="w2二問目">
+			</Event>
+			<Event name="2017年7月" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="w2二問目" message="甲南大学の小型漫才ロボット二体の名前は？">
+			<Event name="めいちゃんとかん太" action="wrong" trans="終了">
+			</Event>
+			<Event name="あいちゃんとごん太" action="right" trans="w2三問目">
+			</Event>
+			<Event name="あきちゃんとけん太" action="wrong" trans="終了">
+			</Event>
+			<Event name="あいちゃんとげん太" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="w2三問目" message="甲南大学13号館で販売されていないものは？">
+			<Event name="ライスL" action="wrong" trans="終了">
+			</Event>
+			<Event name="唐揚げ" action="wrong" trans="終了">
+			</Event>
+			<Event name="常温の飲料水" action="wrong" trans="終了">
+			</Event>
+			<Event name="生卵" action="right" trans="wave2終了会話">
+			</Event>
+		</State>
+		<State name="wave2終了会話" message="負けちゃったね・・・。君なら次もいけそうだ、気を付けてね。">
+		    <Event name="まだあるんですか、はぁ・・・" action="right" trans="wave3開始会話">
+		    </Event>
+		     <Event name="いや面倒くさいのでいきませんよ" action="right" trans="wave3開始会話">
+		    </Event>
+		     <Event name="ほんと、もう・・・" action="right" trans="wave3開始会話">
+		    </Event>
+		     <Event name="zzzえ、あ、ねてないよ" action="right" trans="wave3開始会話">
+		    </Event>
+		</State>
+		<State name="wave3開始会話" message="ついにここまで来たかッ・・・よかろう、全力でかかって来るがいい。私も全力で潰してやろう！！" >
+		    <Event name="こうなったら最後までやってやる" action="right" trans="w3一問目">
+		    </Event>
+		     <Event name="ホントにこれで終わるんですよね？" action="right" trans="w3一問目">
+		    </Event>
+		     <Event name="帰りたいんですけど！！" action="right" trans="w3一問目">
+		    </Event>
+		     <Event name="かれ～らいすぅ・・・むにゃむにゃ" action="right" trans="w3一問目">
+		    </Event>
+		</State>
+		<State name="w3一問目" message="ブラックホールについて、間違った説明は？">
+			<Event name="高密度である" action="wrong" trans="終了">
+			</Event>
+			<Event name="強力な重力を持つ" action="wrong" trans="終了">
+			</Event>
+			<Event name="天体ではない" action="right" trans="w3二問目">
+			</Event>
+			<Event name="直接観測できない" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="w3二問目" message="世界最初のコンピュータで演算できる最大桁数は？">
+			<Event name="10桁" action="right" trans="w3三問目">
+			</Event>
+			<Event name="16桁" action="wrong" trans="終了">
+			</Event>
+			<Event name="20桁" action="wrong" trans="終了">
+			</Event>
+			<Event name="12桁" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="w3三問目" message="最も世界遺産が多い国は？">
+			<Event name="中国" action="wrong" trans="終了">
+			</Event>
+			<Event name="スペイン" action="wrong" trans="終了">
+			</Event>
+			<Event name="イタリア" action="right" trans="w3四問目">
+			</Event>
+			<Event name="フランス" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="w3四問目" message="日本の映画で興行収入第2位の作品は？">
+			<Event name="千と千尋の神隠し" action="wrong" trans="終了">
+			</Event>
+			<Event name="君の名は。" action="right" trans="w3五問目">
+			</Event>
+			<Event name="ハウルの動く城" action="wrong" trans="終了">
+			</Event>
+			<Event name="もののけ姫" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="w3五問目" message="グラジオラスの花言葉は？">
+			<Event name="憤怒" action="wrong" trans="終了">
+			</Event>
+			<Event name="勝利" action="right" trans="wave3終了会話">
+			</Event>
+			<Event name="嫉妬" action="wrong" trans="終了">
+			</Event>
+			<Event name="祝福" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="wave3終了会話" message="私を倒すとはッ...!!だが私は四天王の中でも最弱。次の相手は私のようにはいかないだろう、覚悟しておｋ">
+		     <Event name="終わりじゃないんですかぁ？" action="right" trans="全問正解">
+		    </Event>
+		     <Event name="テンプレはいらん" action="right" trans="全問正解">
+		    </Event>
+		     <Event name="やっと帰れる・・・" action="right" trans="全問正解">
+		    </Event>
+		     <Event name="ZZZZZZ" action="right" trans="全問正解">
+		    </Event>
+		</State>
+		<State name="全問正解" message="STAGE CLEAR!!!">
+		</State>
+		<State name="終了" message="GAME OVER">
 		</State>
 	</FSM>
 </Scenario>
