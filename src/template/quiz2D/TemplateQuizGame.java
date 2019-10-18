@@ -5,6 +5,8 @@ import java.awt.Color;
 import framework.RWT.RWTContainer;
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
+import framework.audio.BGM3D;
+import framework.audio.Sound3D;
 import framework.gameMain.SimpleScenarioGame;
 import framework.model3D.Universe;
 import framework.scenario.Event;
@@ -13,6 +15,7 @@ import framework.view3D.Camera3D;
 
 public class TemplateQuizGame extends SimpleScenarioGame {
 	private RWTFrame3D frame;
+	private Sound3D fightBGM = BGM3D.registerBGM("data\\sound\\fightbgm.wav");
 	
 	@Override
 	public void init(Universe universe, Camera3D camera) {		
@@ -20,6 +23,7 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		setScenario("data\\TemplateQuiz\\scenario.xml");
 		container.setScenario(scenario);
 		scenario.fire("開始");
+		//BGM3D.playBGM(fightBGM);
 	}
 
 	@Override
@@ -50,6 +54,16 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 	@Override
 	public void action(String action, Event event, ScenarioState nextState) {
+		
+		if (action.equals("openDialog")) {
+			
+		}else if(action.equals("right1")){
+			BGM3D.playBGM(fightBGM);
+			QuizGameContainer a = new QuizGameContainer();
+			a.actionuke(1);
+				
+		}
+		
 		// シナリオ進行による世界への作用をここに書く
 		if (action.equals("right")) {
 		} else if (action.equals("wrong")) {
