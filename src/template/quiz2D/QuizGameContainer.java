@@ -28,16 +28,16 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	public void build(GraphicsConfiguration gc) {
 		super.build(gc);
 		canvas.setRelativePosition(0.0f, -0.3f);		// 3D表示部の左上端
-		canvas.setRelativeSize(1.0f, 0.95f);		// 3D表示部のサイズ
+		canvas.setRelativeSize(1.0f, 1.0f);		// 3D表示部のサイズ
 		addCanvas(canvas);
 
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
-		image.setRelativePosition(0.0f, 0.0f);
+		image.setRelativePosition(0.0f, -0.2f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
 
 
-		dialog.setRelativePosition(0.3f, 0.8f);	// ダイアログ
+		dialog.setRelativePosition(0.2f, 0.75f);	// ダイアログ
 		dialog.setFont(new Font("", Font.PLAIN, 12));	// 文字のフォント
 		dialog.setColor(Color.WHITE);				// 文字の色
 		addWidget(dialog);
@@ -52,14 +52,14 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 
 		optionButtons[1] = new RWTButton("2");
 		optionButtons[1].setFont(f);
-		optionButtons[1].setRelativePosition(0.1f, 0.9f);
+		optionButtons[1].setRelativePosition(0.5f, 0.8f);
 		optionButtons[1].setRelativeHeight(0.08f);
 		optionButtons[1].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[1], 1, 0);
 
 		optionButtons[2] = new RWTButton("3");
 		optionButtons[2].setFont(f);
-		optionButtons[2].setRelativePosition(0.5f, 0.8f);
+		optionButtons[2].setRelativePosition(0.1f, 0.9f );
 		optionButtons[2].setRelativeHeight(0.08f);
 		optionButtons[2].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[2], 0, 1);
@@ -70,8 +70,8 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		optionButtons[3].setRelativeHeight(0.08f);
 		optionButtons[3].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[3], 1, 1);
-
-
+		 
+				
 		repaint();
 	}
 
