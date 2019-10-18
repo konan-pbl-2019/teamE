@@ -9,9 +9,19 @@
 			</Event>
 			<Event name="フランスパン" action="wrong" trans="終了">
 			</Event>
-			<Event name="フライパン" action="right1" trans="二問目">
+			<Event name="フライパン" action="right" trans="正解">
 			</Event>
 			<Event name="食パン" action="wrong" trans="終了">
+			</Event>
+		</State>
+		<State name="正解" message="正解">
+			<Event name="" action="right2" trans="二問目">
+		<Event name="フランスパン" action="wrong" trans="終了">
+			</Event>
+			<Event name="フライパン" action="right" trans="終了">
+			</Event>
+			<Event name="食パン" action="wrong" trans="終了">
+			</Event>
 			</Event>
 		</State>
 		<State name="二問目" message="トリはトリでも飛べないトリは？">

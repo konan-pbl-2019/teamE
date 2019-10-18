@@ -41,10 +41,6 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		image.setRelativePosition(0.0f, -0.2f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
-//		image2 = new RWTImage("data\\images\\m101.jpg");
-//		image2.setRelativePosition(0.5f, 0.5f);
-//		image2.setSize(100, 100);
-//		canvas.addWidget(image2);
 
 		dialog.setRelativePosition(0.2f, 0.75f);	// ダイアログ
 		dialog.setFont(new Font("", Font.PLAIN, 12));	// 文字のフォント
@@ -88,9 +84,27 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	public  void actionuke(int a) {
 
 		seikai=a;
-	//	image.setImage("data\\images\\MyShip.gif");
+		if (seikai==1) {
+			
+		image2 = new RWTImage("data\\images\\m101.jpg");
+		image2.setRelativePosition(0.5f, 0.5f);
+		image2.setSize(100, 100);
+		canvas.addWidget(image2);
+		repaint();
+		}
+			seikai=0;
 		repaint();
 	}
+	
+	public void mon() {
+		image = new RWTImage("data\\images\\quizhaikei.jpg");
+		image.setRelativePosition(0.0f, -0.2f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+		
+	}
+	
+	
 
 	public void showOption(int n, String option) {
 		optionButtons[n].setLabel(option);
