@@ -16,7 +16,7 @@
 		</State>
 		<State name="w1一問目" message="次のうち、存在しないのは？">
 
-			<Event name="東京都" action="wrong" trans="終了">
+			<Event name="長野県" action="wrong" trans="終了">
 			</Event>
 			<Event name="兵庫県" action="wrong" trans="終了">
 			</Event>
