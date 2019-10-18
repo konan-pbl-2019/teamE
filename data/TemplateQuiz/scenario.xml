@@ -9,7 +9,7 @@
 		    </Event>
 		     <Event name="面倒くさい" action="right" trans="w1一問目">
 		    </Event>
-		     <Event name="かえっていいですね" action="right" trans="w1一問目">
+		     <Event name="かえりたいです" action="right" trans="w1一問目">
 		    </Event>
 		     <Event name="ねっむ" action="right" trans="w1一問目">
 		    </Event>
@@ -50,17 +50,17 @@
 		    </Event>
 		     <Event name="面倒なんでもうやりたくないです" action="right" trans="wave2開始会話">
 		    </Event>
-		     <Event name="かえっていいですか" action="right" trans="wave2開始会話">
+		     <Event name="もういいですか" action="right" trans="wave2開始会話">
 		    </Event>
 		     <Event name="ふわぁあ" action="right" trans="wave2開始会話">
 		    </Event>
 		</State>
-		<State name="wave2開始会話" massage="やぁ、次は僕が相手だ。負けないよ。" >
+		<State name="wave2開始会話" message="やぁ、次は僕が相手だ。負けないよ" >
 		    <Event name="つ、次があるんだ・・・" action="right" trans="w2一問目">
 		    </Event>
 		     <Event name="マジかよ、めんど" action="right" trans="w2一問目">
 		    </Event>
-		     <Event name="かえっていいですか" action="right" trans="w2一問目">
+		     <Event name="もう帰りたいんですけど" action="right" trans="w2一問目">
 		    </Event>
 		     <Event name="ホントねむい" action="right" trans="w2一問目">
 		    </Event>
@@ -100,17 +100,17 @@
 		    </Event>
 		     <Event name="いや面倒くさいのでいきませんよ" action="right" trans="wave3開始会話">
 		    </Event>
-		     <Event name="かえっていいですか" action="right" trans="wave3開始会話">
+		     <Event name="ほんと、もう・・・" action="right" trans="wave3開始会話">
 		    </Event>
 		     <Event name="zzzえ、あ、ねてないよ" action="right" trans="wave3開始会話">
 		    </Event>
 		</State>
-		<State name="wave3開始会話" massage="ついにここまで来たか・・・。よかろう、全力でかかって来るがいい。私も貴様を全力で捻り潰してやろう！" >
+		<State name="wave3開始会話" message="ついにここまで来たかッ・・・よかろう、全力でかかって来るがいい。私も全力で潰してやろう！！" >
 		    <Event name="こうなったら最後までやってやる" action="right" trans="w3一問目">
 		    </Event>
 		     <Event name="ホントにこれで終わるんですよね？" action="right" trans="w3一問目">
 		    </Event>
-		     <Event name="もうかえっていいですか" action="right" trans="w3一問目">
+		     <Event name="帰りたいんですけど！！" action="right" trans="w3一問目">
 		    </Event>
 		     <Event name="かれ～らいすぅ・・・むにゃむにゃ" action="right" trans="w3一問目">
 		    </Event>
@@ -170,7 +170,7 @@
 		    </Event>
 		     <Event name="テンプレはいらん" action="right" trans="全問正解">
 		    </Event>
-		     <Event name="かえっていいですか" action="right" trans="全問正解">
+		     <Event name="やっと帰れる・・・" action="right" trans="全問正解">
 		    </Event>
 		     <Event name="ZZZZZ" action="right" trans="全問正解">
 		    </Event>
