@@ -295,8 +295,24 @@
 		    </Event>
 		</State>
 		<State name="全問正解" message="STAGE CLEAR!!!">
+		     <Event name="メニューへ" trans="メニュー画面">
+		    </Event>
+		    <Event name="" trans="終了">
+		    </Event>
+		     <Event name=" " trans="終了">
+		    </Event>
+		     <Event name="  " trans="終了">
+		    </Event>
 		</State>
 		<State name="終了" message="GAME OVER">
+		    <Event name="メニューへ" trans="メニュー画面">
+		    </Event>
+		    <Event name="" trans="終了">
+		    </Event>
+		     <Event name=" " trans="終了">
+		    </Event>
+		     <Event name="  " trans="終了">
+		    </Event>
 		</State>
 	</FSM>
 </Scenario>
