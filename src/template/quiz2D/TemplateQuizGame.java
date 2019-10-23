@@ -33,6 +33,7 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	
 
 
+
 	@Override
 	protected RWTContainer createRWTContainer() {
 		container = new QuizGameContainer();
