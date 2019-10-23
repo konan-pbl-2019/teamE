@@ -31,10 +31,15 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		canvas.setRelativeSize(1.0f, 1.0f);		// 3D表示部のサイズ
 		addCanvas(canvas);
 
+	
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
 		image.setRelativePosition(0.0f, -0.2f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
+		RWTImage image1 = new RWTImage("data\\images\\6825f9ab92d3dc92903b8d9cad0b01e3.png");
+		image1.setRelativePosition(0.35f, 0.5f);
+		image1.setSize(300, 300);
+		canvas.addWidget(image1);
 
 
 		dialog.setRelativePosition(0.2f, 0.75f);	// ダイアログ

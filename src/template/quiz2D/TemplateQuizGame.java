@@ -51,7 +51,10 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	@Override
 	public void action(String action, Event event, ScenarioState nextState) {
 		// シナリオ進行による世界への作用をここに書く
+		
+		
 		if (action.equals("right")) {
+
 		} else if (action.equals("wrong")) {
 		}
 	}
