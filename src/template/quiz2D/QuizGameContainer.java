@@ -27,21 +27,21 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	@Override
 	public void build(GraphicsConfiguration gc) {
 		super.build(gc);
-		canvas.setRelativePosition(0.0f, -0.3f);		// 3D表示部の左上端
+		canvas.setRelativePosition(0.0f, 1.0f);		// 3D表示部の左上端
 		canvas.setRelativeSize(1.0f, 1.0f);		// 3D表示部のサイズ
 		addCanvas(canvas);
 
+	
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
 		image.setRelativePosition(0.0f, -0.2f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
-
-
+		
 		dialog.setRelativePosition(0.2f, 0.75f);	// ダイアログ
 		dialog.setFont(new Font("", Font.PLAIN, 12));	// 文字のフォント
 		dialog.setColor(Color.WHITE);				// 文字の色
 		addWidget(dialog);
-
+		
 		Font f = new Font("", Font.PLAIN, 30);
 		optionButtons[0] = new RWTButton("1");
 		optionButtons[0].setFont(f);
@@ -70,6 +70,9 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		optionButtons[3].setRelativeHeight(0.08f);
 		optionButtons[3].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[3], 1, 1);
+		
+		
+		addWidgetOnBack(image);
 
 
 		repaint();
