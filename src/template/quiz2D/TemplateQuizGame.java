@@ -15,12 +15,14 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	private RWTFrame3D frame;
 	int life = 3;//残機
 
+
 	@Override
 	public void init(Universe universe, Camera3D camera) {
 		// シナリオの設定
 		setScenario("data\\TemplateQuiz\\scenario.xml");
 		container.setScenario(scenario);
 		scenario.fire("開始");
+
 	}
 
 	@Override
@@ -51,14 +53,19 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	public void action(String action, Event event, ScenarioState nextState) {
 		// シナリオ進行による世界への作用をここに書く
 
+
 		if (action.equals("right")) {
+			((QuizGameContainer)container).hp(life);
 		} else if (action.equals("wrong")) {
 			life--;
+			((QuizGameContainer)container).hp(life);
 		}
 
+
 		if(life==0) {
-			scenario.fire("終了");
+			scenario.go("終了");
 		}
+
 
 	}
 
@@ -72,5 +79,7 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		game.setFramePolicy(5, 33, false);
 		game.start();
 	}
+
+
 
 }
