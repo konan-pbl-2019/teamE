@@ -5,8 +5,6 @@ import java.awt.Color;
 import framework.RWT.RWTContainer;
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
-import framework.audio.BGM3D;
-import framework.audio.Sound3D;
 import framework.gameMain.SimpleScenarioGame;
 import framework.model3D.Universe;
 import framework.scenario.Event;
@@ -18,12 +16,16 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	private Sound3D startBGM =BGM3D.registerBGM("data\\sound\\sentou2.wav");
 	private Sound3D endBGM =BGM3D.registerBGM("data\\sound\\gameover3.wav");
 	private Sound3D clearBGM =BGM3D.registerBGM("data\\sound\\clear.wav");
+
+	int life = 3;//æ®‹æ©Ÿ
+
 	@Override
-	public void init(Universe universe, Camera3D camera) {		
-		// ƒVƒiƒŠƒI‚Ìİ’è
+	public void init(Universe universe, Camera3D camera) {
+		// ã‚·ãƒŠãƒªã‚ªã®è¨­å®š
 		setScenario("data\\TemplateQuiz\\scenario.xml");
 		container.setScenario(scenario);
-		scenario.fire("ŠJn");
+		scenario.fire("é–‹å§‹");
+
 	}
 
 	@Override
@@ -34,19 +36,17 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		frame.setBackground(Color.BLACK);
 		return frame;
 	}
-	
-
 
 	@Override
 	protected RWTContainer createRWTContainer() {
 		container = new QuizGameContainer();
 		return container;
 	}
-	
+
 	@Override
 	public void progress(RWTVirtualController virtualController, long interval) {
 	}
-	
+
 	@Override
 	public void showOption(int n, String option) {
 		((QuizGameContainer)container).showOption(n, option);
@@ -54,27 +54,37 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 	@Override
 	public void action(String action, Event event, ScenarioState nextState) {
-		// ƒVƒiƒŠƒIis‚É‚æ‚é¢ŠE‚Ö‚Ìì—p‚ğ‚±‚±‚É‘‚­
+		// ã‚·ãƒŠãƒªã‚ªé€²è¡Œã«ã‚ˆã‚‹ä¸–ç•Œã¸ã®ä½œç”¨ã‚’ã“ã“ã«æ›¸ã
+
 		if (action.equals("openDialog")) {
 			BGM3D.playBGM(startBGM);
 			((QuizGameContainer)container).haikei();
+
+
+
+		if (action.equals("right")) {
+
 		} else if (action.equals("wrong")) {
+			life--;
+
 		} else if(action.equals("right1")) {
-			
-			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).haikei1();
 			((QuizGameContainer)container).wave1enemy();
 		} else if(action.equals("right2")) {
-			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).haikei2();
 			((QuizGameContainer)container).wave2enemy();
 		} else if(action.equals("right3")) {
-	
-			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).haikei3();
 			((QuizGameContainer)container).wave3enemy();
 		}
-		
-		if(action.equals("right10")) {
-			((QuizGameContainer)container).seikai();
-			
+
+		if(life==0) {
+			scenario.go("çµ‚äº†");
+			life=3;
+		}
+
+		if(action.equals("fin")) {
+			System.exit(0);
 		}
 		if(action.equals("wrong")) {
 			((QuizGameContainer)container).batsu();
@@ -91,9 +101,10 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 			((QuizGameContainer)container).wave2enemy();
 		}
 	}
+
 	/**
-	 * ƒQ[ƒ€‚ÌƒƒCƒ“
-	 * 
+	 * ã‚²ãƒ¼ãƒ ã®ãƒ¡ã‚¤ãƒ³
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {

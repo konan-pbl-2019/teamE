@@ -13,7 +13,7 @@ import framework.audio.Sound3D;
 import framework.gameMain.BaseScenarioGameContainer;
 
 /**
- * ÉNÉCÉYÉQÅ[ÉÄópâÊñ 
+ * „ÇØ„Ç§„Ç∫„Ç≤„Éº„É†Áî®ÁîªÈù¢
  * @author Nitta
  *
  */
@@ -34,8 +34,8 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	@Override
 	public void build(GraphicsConfiguration gc) {
 		super.build(gc);
-		canvas.setRelativePosition(0.0f, -0.28f);		// 3Dï\é¶ïîÇÃç∂è„í[
-		canvas.setRelativeSize(1.0f, 1.0f);		// 3Dï\é¶ïîÇÃÉTÉCÉY
+		canvas.setRelativePosition(0.0f, -0.28f);		// 3DË°®Á§∫ÈÉ®„ÅÆÂ∑¶‰∏äÁ´Ø
+		canvas.setRelativeSize(1.0f, 1.0f);		// 3DË°®Á§∫ÈÉ®„ÅÆ„Çµ„Ç§„Ç∫
 		addCanvas(canvas);
 
 
@@ -44,40 +44,48 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
 
-		dialog.setRelativePosition(0.2f, 0.75f);	// É_ÉCÉAÉçÉO
-		dialog.setFont(new Font("", Font.PLAIN, 12));	// ï∂éöÇÃÉtÉHÉìÉg
-		dialog.setColor(Color.WHITE);				// ï∂éöÇÃêF
+		dialog.setRelativePosition(0.0f, 0.75f);	// „ÉÄ„Ç§„Ç¢„É≠„Ç∞
+		dialog.setFont(new Font("", Font.PLAIN, 12));	// ÊñáÂ≠ó„ÅÆ„Éï„Ç©„É≥„Éà
+		dialog.setColor(Color.WHITE);				// ÊñáÂ≠ó„ÅÆËâ≤
 		addWidget(dialog);
 
-		Font f = new Font("", Font.PLAIN, 30);
+		Font f = new Font("", Font.PLAIN, 22);
 		optionButtons[0] = new RWTButton("1");
 		optionButtons[0].setFont(f);
 		optionButtons[0].setRelativePosition(0.1f, 0.8f);
 		optionButtons[0].setRelativeHeight(0.08f);
-		optionButtons[0].setRelativeWidth(0.2f);
+		optionButtons[0].setRelativeWidth(0.37f);
 		addSelectableWidget(optionButtons[0], 0, 0);
 
 		optionButtons[1] = new RWTButton("2");
 		optionButtons[1].setFont(f);
 		optionButtons[1].setRelativePosition(0.5f, 0.8f);
 		optionButtons[1].setRelativeHeight(0.08f);
-		optionButtons[1].setRelativeWidth(0.2f);
+		optionButtons[1].setRelativeWidth(0.37f);
 		addSelectableWidget(optionButtons[1], 1, 0);
 
 		optionButtons[2] = new RWTButton("3");
 		optionButtons[2].setFont(f);
 		optionButtons[2].setRelativePosition(0.1f, 0.9f );
 		optionButtons[2].setRelativeHeight(0.08f);
-		optionButtons[2].setRelativeWidth(0.2f);
+		optionButtons[2].setRelativeWidth(0.37f);
 		addSelectableWidget(optionButtons[2], 0, 1);
 
 		optionButtons[3] = new RWTButton("4");
 		optionButtons[3].setFont(f);
 		optionButtons[3].setRelativePosition(0.5f, 0.9f);
 		optionButtons[3].setRelativeHeight(0.08f);
-		optionButtons[3].setRelativeWidth(0.2f);
+		optionButtons[3].setRelativeWidth(0.37f);
 		addSelectableWidget(optionButtons[3], 1, 1);
-		addWidgetOnBack(image);
+
+
+		RWTImage window = new RWTImage("data\\images\\gamewindow.png");
+		window.setRelativePosition(0.0f, 0.69f);
+		window.setSize(990, 230);
+
+
+		addWidgetOnBack(window);
+
 
 
 		repaint();
@@ -104,13 +112,28 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		canvas.addWidget(image4);
 		repaint();
 	}
-	public void haikei() {
+	public void haikei1() {
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
 		image.setRelativePosition(0.0f, -0.1f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
 		repaint();
 	}
+	public void haikei2() {
+		RWTImage image = new RWTImage("data\\images\\134747125007113227040_BG10b_80.jpg");
+		image.setRelativePosition(0.0f, -0.1f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+		repaint();
+	}
+	public void haikei3() {
+		RWTImage image = new RWTImage("data\\images\\night.jpg");
+		image.setRelativePosition(0.0f, -0.1f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+		repaint();
+	}
+
 
 	public void seikai() {
 		RWTImage image = new RWTImage("data\\images\\seikai.png");
