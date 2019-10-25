@@ -53,9 +53,17 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		// シナリオ進行による世界への作用をここに書く
 		if (action.equals("right")) {
 		} else if (action.equals("wrong")) {
+		} else if(action.equals("right1")) {
+			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).wave1enemy();
+		} else if(action.equals("right2")) {
+			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).wave2enemy();
+		} else if(action.equals("right3")) {
+			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).wave3enemy();
 		}
 	}
-
 	/**
 	 * ゲームのメイン
 	 * 

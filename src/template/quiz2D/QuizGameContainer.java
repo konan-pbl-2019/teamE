@@ -27,13 +27,13 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	@Override
 	public void build(GraphicsConfiguration gc) {
 		super.build(gc);
-		canvas.setRelativePosition(0.0f, 1.0f);		// 3D表示部の左上端
+		canvas.setRelativePosition(0.0f, -0.28f);		// 3D表示部の左上端
 		canvas.setRelativeSize(1.0f, 1.0f);		// 3D表示部のサイズ
 		addCanvas(canvas);
 
 	
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
-		image.setRelativePosition(0.0f, -0.2f);
+		image.setRelativePosition(0.0f, -0.1f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
 		
@@ -77,7 +77,36 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 
 		repaint();
 	}
-
+	
+	public void wave1enemy() {
+		RWTImage image2 = new RWTImage("data\\images\\wave1.png");
+		image2.setRelativePosition(0.4f, 0.4f);
+		image2.setSize(200, 400);
+		canvas.addWidget(image2);
+		repaint();
+	}
+	public void wave2enemy() {
+		RWTImage image3 = new RWTImage("data\\images\\wave2.png");
+		image3.setRelativePosition(0.4f, 0.4f);
+		image3.setSize(200, 400);
+		canvas.addWidget(image3);
+		repaint();
+	}
+	public void wave3enemy() {
+		RWTImage image4 = new RWTImage("data\\images\\wave3.png");
+		image4.setRelativePosition(0.32f, 0.3f);
+		image4.setSize(300, 500);
+		canvas.addWidget(image4);
+		repaint();
+	}
+	public void haikei() {
+		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
+		image.setRelativePosition(0.0f, -0.1f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+		repaint();
+	}
+	
 	public void showOption(int n, String option) {
 		optionButtons[n].setLabel(option);
 	}
