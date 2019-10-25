@@ -216,23 +216,23 @@
 		    </Event>
 		</State>
 		<State name="w2三問目正解" message="正解！　敵に1ダメージ！">
-		    <Event name="" action="right2" trans="wave2終了会話">
+		    <Event name="" action="righta" trans="wave2終了会話">
 		    </Event>
-		    <Event name=" " action="right2" trans="wave2終了会話">
+		    <Event name=" " action="righta" trans="wave2終了会話">
 		    </Event>
-		    <Event name="  " action="right2"  trans="wave2終了会話">
+		    <Event name="  " action="righta"  trans="wave2終了会話">
 		    </Event>
-		    <Event name="   " action="right2"  trans="wave2終了会話">
+		    <Event name="   " action="righta"  trans="wave2終了会話">
 		    </Event>
 		</State>
 		<State name="wave2終了会話" message="負けちゃったね・・・。君なら次もいけそうだ、気を付けてね。">
-		    <Event name="まだあるんですか、はぁ・・・" action="right3" trans="wave3開始会話">
+		    <Event name="まだあるんですか、はぁ・・・" action="right3a" trans="wave3開始会話">
 		    </Event>
-		     <Event name="いや面倒くさいのでいきませんよ" action="right3" trans="wave3開始会話">
+		     <Event name="いや面倒くさいのでいきませんよ" action="right3a" trans="wave3開始会話">
 		    </Event>
-		     <Event name="ほんと、もう・・・" action="right3" trans="wave3開始会話">
+		     <Event name="ほんと、もう・・・" action="right3a" trans="wave3開始会話">
 		    </Event>
-		     <Event name="zzzえ、あ、ねてないよ" action="right3" trans="wave3開始会話">
+		     <Event name="zzzえ、あ、ねてないよ" action="right3a" trans="wave3開始会話">
 		    </Event>
 		</State>
 		<State name="wave3開始会話" message="ついにここまで来たかッ・・・よかろう、全力でかかって来るがいい。私も全力で潰してやろう！！" >
@@ -396,17 +396,17 @@
 		    </Event>
 		</State>
 		<State name="wave3終了会話" message="私を倒すとはッ...!!だが私は四天王の中でも最弱。次の相手は私のようにはいかないだろう、覚悟しておｋ">
-		     <Event name="終わりじゃないんですかぁ？" action="right3" trans="全問正解">
+		     <Event name="終わりじゃないんですかぁ？" action="righta" trans="全問正解">
 		    </Event>
-		     <Event name="テンプレはいらん" action="right3" trans="全問正解">
+		     <Event name="テンプレはいらん" action="righta" trans="全問正解">
 		    </Event>
-		     <Event name="やっと帰れる・・・" action="right3" trans="全問正解">
+		     <Event name="やっと帰れる・・・" action="righta" trans="全問正解">
 		    </Event>
-		     <Event name="ZZZZZZ" action="right3" trans="全問正解">
+		     <Event name="ZZZZZZ" action="righta" trans="全問正解">
 		    </Event>
 		</State>
 		<State name="全問正解" message="STAGE CLEAR!!!">
-		     <Event name="メニューへ" trans="メニュー画面">
+		     <Event name="メニューへ" action="openDialog" trans="メニュー画面">
 		    </Event>
 		    <Event name="" trans="全問正解">
 		    </Event>

@@ -5,6 +5,8 @@ import java.awt.Color;
 import framework.RWT.RWTContainer;
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
+import framework.audio.BGM3D;
+import framework.audio.Sound3D;
 import framework.gameMain.SimpleScenarioGame;
 import framework.model3D.Universe;
 import framework.scenario.Event;
@@ -17,14 +19,14 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 	private Sound3D endBGM =BGM3D.registerBGM("data\\sound\\gameover3.wav");
 	private Sound3D clearBGM =BGM3D.registerBGM("data\\sound\\clear.wav");
 
-	int life = 3;//残機
+	int life = 3;
 
 	@Override
 	public void init(Universe universe, Camera3D camera) {
-		// シナリオの設定
+
 		setScenario("data\\TemplateQuiz\\scenario.xml");
 		container.setScenario(scenario);
-		scenario.fire("開始");
+		scenario.fire("�J�n");
 
 	}
 
@@ -54,15 +56,17 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 	@Override
 	public void action(String action, Event event, ScenarioState nextState) {
-		// シナリオ進行による世界への作用をここに書く
 
 		if (action.equals("openDialog")) {
 			BGM3D.playBGM(startBGM);
-			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).haikei1();
+		}
 
 
 
-		if (action.equals("right")) {
+		if (action.equals("right10")) {
+			((QuizGameContainer)container).seikai();
+
 
 		} else if (action.equals("wrong")) {
 			life--;
@@ -79,7 +83,8 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		}
 
 		if(life==0) {
-			scenario.go("終了");
+			scenario.go("�I��");
+			BGM3D.playBGM(endBGM);
 			life=3;
 		}
 
@@ -88,25 +93,25 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		}
 		if(action.equals("wrong")) {
 			((QuizGameContainer)container).batsu();
-			BGM3D.playBGM(endBGM);
-			
+
 		}
 		if(action.equals("righta")) {
 			BGM3D.playBGM(clearBGM);
 		}
-		
+
 		if(action.equals("right2a")) {
 			BGM3D.playBGM(startBGM);
-			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).haikei2();
 			((QuizGameContainer)container).wave2enemy();
+		}
+		if(action.equals("right3a")) {
+			BGM3D.playBGM(startBGM);
+			((QuizGameContainer)container).haikei3();
+			((QuizGameContainer)container).wave3enemy();
 		}
 	}
 
-	/**
-	 * ゲームのメイン
-	 *
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 		TemplateQuizGame game = new TemplateQuizGame();
 		game.setFramePolicy(5, 33, false);
