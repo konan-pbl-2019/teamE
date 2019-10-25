@@ -55,10 +55,10 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 
 		if (action.equals("right")) {
-			((QuizGameContainer)container).hp(life);
+
 		} else if (action.equals("wrong")) {
 			life--;
-		((QuizGameContainer)container).hp(life);
+
 		} else if(action.equals("right1")) {
 			((QuizGameContainer)container).haikei1();
 			((QuizGameContainer)container).wave1enemy();
@@ -72,6 +72,7 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 		if(life==0) {
 			scenario.go("èIóπ");
+			life=3;
 		}
 
 		if(action.equals("fin")) {
