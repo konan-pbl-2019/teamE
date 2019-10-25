@@ -15,8 +15,9 @@ import framework.view3D.Camera3D;
 
 public class TemplateQuizGame extends SimpleScenarioGame {
 	private RWTFrame3D frame;
-	private Sound3D startBGM =BGM3D.registerBGM("data\\sound\\sentou.wav");
-	
+	private Sound3D startBGM =BGM3D.registerBGM("data\\sound\\sentou2.wav");
+	private Sound3D endBGM =BGM3D.registerBGM("data\\sound\\gameover3.wav");
+	private Sound3D clearBGM =BGM3D.registerBGM("data\\sound\\clear.wav");
 	@Override
 	public void init(Universe universe, Camera3D camera) {		
 		// シナリオの設定
@@ -56,14 +57,17 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		// シナリオ進行による世界への作用をここに書く
 		if (action.equals("openDialog")) {
 			BGM3D.playBGM(startBGM);
+			((QuizGameContainer)container).haikei();
 		} else if (action.equals("wrong")) {
 		} else if(action.equals("right1")) {
+			
 			((QuizGameContainer)container).haikei();
 			((QuizGameContainer)container).wave1enemy();
 		} else if(action.equals("right2")) {
 			((QuizGameContainer)container).haikei();
 			((QuizGameContainer)container).wave2enemy();
 		} else if(action.equals("right3")) {
+	
 			((QuizGameContainer)container).haikei();
 			((QuizGameContainer)container).wave3enemy();
 		}
@@ -71,6 +75,20 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		if(action.equals("right10")) {
 			((QuizGameContainer)container).seikai();
 			
+		}
+		if(action.equals("wrong")) {
+			((QuizGameContainer)container).batsu();
+			BGM3D.playBGM(endBGM);
+			
+		}
+		if(action.equals("righta")) {
+			BGM3D.playBGM(clearBGM);
+		}
+		
+		if(action.equals("right2a")) {
+			BGM3D.playBGM(startBGM);
+			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).wave2enemy();
 		}
 	}
 	/**

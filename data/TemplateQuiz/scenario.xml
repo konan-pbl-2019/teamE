@@ -7,7 +7,7 @@
 		<State name="メニュー画面" message="　　　　　　メニュー">
 		    <Event name="はじめから" action="right1" trans="wave1開始会話">
 		    </Event>
-		    <Event name="中間から" action="right2" trans="wave2開始会話">
+		    <Event name="中間から" action="right2a" trans="wave2開始会話">
 		    </Event>
 		    <Event name="最後から" action="right3" trans="wave3開始会話">
 		    </Event>
@@ -45,7 +45,7 @@
 		    </Event>
 		</State>
 		<State name="w1二問目" message="2020年のオリンピックの場所は？">
-			<Event name="東京都" action="right1" trans="w1二問目正解">
+			<Event name="東京都" action="right10" trans="w1二問目正解">
 			</Event>
 			<Event name="神奈川県" action="wrong" trans="終了">
 			</Event>
@@ -55,19 +55,19 @@
 			</Event>
 		</State>
 		<State name="w1二問目正解" message="正解！　敵に1ダメージ！">
-		    <Event name="" trans="w1三問目">
+		    <Event name="" action="right1" trans="w1三問目">
 		    </Event>
-		    <Event name=" " trans="w1三問目">
+		    <Event name=" " action="right1" trans="w1三問目">
 		    </Event>
-		    <Event name="  " trans="w1三問目">
+		    <Event name="  " action="right1" trans="w1三問目">
 		    </Event>
-		    <Event name="   " trans="w1三問目">
+		    <Event name="   " action="right1" trans="w1三問目">
 		    </Event>
 		</State>
 		<State name="w1三問目" message="令和1年、いつから始まった？">
 			<Event name="2019年3月1日" action="wrong" trans="終了">
 			</Event>
-			<Event name="2019年5月1日" action="right1" trans="w1三問目正解">
+			<Event name="2019年5月1日" action="right10" trans="w1三問目正解">
 			</Event>
 			<Event name="2019年4月1日" action="wrong" trans="終了">
 			</Event>
@@ -75,23 +75,23 @@
 			</Event>
 		</State>
 		<State name="w1三問目正解" message="正解！　敵に1ダメージ！">
-		    <Event name="" trans="wave1終了会話">
+		    <Event name="" action="righta" trans="wave1終了会話">
 		    </Event>
-		    <Event name=" " trans="wave1終了会話">
+		    <Event name=" " action="righta" trans="wave1終了会話">
 		    </Event>
-		    <Event name="  " trans="wave1終了会話">
+		    <Event name="  " action="righta" trans="wave1終了会話">
 		    </Event>
-		    <Event name="   " trans="wave1終了会話">
+		    <Event name="   " action="righta" trans="wave1終了会話">
 		    </Event>
 		</State>
 		<State name="wave1終了会話" message="君って強いんだね！今度はもっと難しい問題を考えてくるからねっ！">
-		    <Event name="ま、またね・・・" action="right2" trans="wave2開始会話">
+		    <Event name="ま、またね・・・" action="right2a" trans="wave2開始会話">
 		    </Event>
-		     <Event name="面倒なんでもうやりたくないです" action="right2" trans="wave2開始会話">
+		     <Event name="面倒なんでもうやりたくないです" action="right2a" trans="wave2開始会話">
 		    </Event>
-		     <Event name="もういいですか" action="right2" trans="wave2開始会話">
+		     <Event name="もういいですか" action="right2a" trans="wave2開始会話">
 		    </Event>
-		     <Event name="ふわぁあ" action="right2" trans="wave2開始会話">
+		     <Event name="ふわぁあ" action="right2a" trans="wave2開始会話">
 		    </Event>
 		</State>
 		<State name="wave2開始会話" message="やぁ、次は僕が相手だ。負けないよ" >
@@ -305,7 +305,7 @@
 		    </Event>
 		</State>
 		<State name="終了" message="GAME OVER">
-		    <Event name="メニューへ" trans="メニュー画面">
+		    <Event name="メニューへ" action="openDialog" trans="メニュー画面">
 		    </Event>
 		    <Event name="" trans="終了">
 		    </Event>

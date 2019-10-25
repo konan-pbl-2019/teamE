@@ -25,6 +25,8 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	private Sound3D sentaku3=new Sound3D("data\\sound\\cursor10.wav");
 	private Sound3D sentaku4=new Sound3D("data\\sound\\cursor10.wav");
 	private Sound3D kettei=new Sound3D("data\\sound\\decision13.wav");
+	private Sound3D seikai=new Sound3D("data\\sound\\seikai.wav");
+	private Sound3D batsu=new Sound3D("data\\sound\\batu.wav");
 	public QuizGameContainer() {
 		super();
 	}
@@ -117,11 +119,17 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		image.setRelativePosition(0.3f, 0.5f);
 		image.setSize(400, 400);
 		canvas.addWidget(image);
+		seikai.play();
 		repaint();
 	}
 
 	public void batsu() {
-
+		RWTImage image = new RWTImage("data\\images\\batsu.png");
+		image.setRelativePosition(0.3f, 0.5f);
+		image.setSize(400, 400);
+		canvas.addWidget(image);
+		batsu.play();
+		repaint();
 	}
 
 	public void showOption(int n, String option) {
@@ -143,6 +151,7 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 			cursorMoveDown();
 			sentaku4.play();
 		}
+		
 	}
 
 	@Override
