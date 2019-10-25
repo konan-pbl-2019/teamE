@@ -13,7 +13,7 @@ import framework.audio.Sound3D;
 import framework.gameMain.BaseScenarioGameContainer;
 
 /**
- * ƒNƒCƒYƒQ[ƒ€—p‰æ–Ê
+ * ã‚¯ã‚¤ã‚ºã‚²ãƒ¼ãƒ ç”¨ç”»é¢
  * @author Nitta
  *
  */
@@ -25,6 +25,8 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	private Sound3D sentaku3=new Sound3D("data\\sound\\cursor10.wav");
 	private Sound3D sentaku4=new Sound3D("data\\sound\\cursor10.wav");
 	private Sound3D kettei=new Sound3D("data\\sound\\decision13.wav");
+	private Sound3D seikai=new Sound3D("data\\sound\\seikai.wav");
+	private Sound3D batsu=new Sound3D("data\\sound\\batu.wav");
 	public QuizGameContainer() {
 		super();
 	}
@@ -32,8 +34,8 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	@Override
 	public void build(GraphicsConfiguration gc) {
 		super.build(gc);
-		canvas.setRelativePosition(0.0f, -0.28f);		// 3D•\¦•”‚Ì¶ã’[
-		canvas.setRelativeSize(1.0f, 1.0f);		// 3D•\¦•”‚ÌƒTƒCƒY
+		canvas.setRelativePosition(0.0f, -0.28f);		// 3Dè¡¨ç¤ºéƒ¨ã®å·¦ä¸Šç«¯
+		canvas.setRelativeSize(1.0f, 1.0f);		// 3Dè¡¨ç¤ºéƒ¨ã®ã‚µã‚¤ã‚º
 		addCanvas(canvas);
 
 
@@ -42,9 +44,9 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
 
-		dialog.setRelativePosition(0.0f, 0.75f);	// ƒ_ƒCƒAƒƒO
-		dialog.setFont(new Font("", Font.PLAIN, 12));	// •¶š‚ÌƒtƒHƒ“ƒg
-		dialog.setColor(Color.WHITE);				// •¶š‚ÌF
+		dialog.setRelativePosition(0.0f, 0.75f);	// ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
+		dialog.setFont(new Font("", Font.PLAIN, 12));	// æ–‡å­—ã®ãƒ•ã‚©ãƒ³ãƒˆ
+		dialog.setColor(Color.WHITE);				// æ–‡å­—ã®è‰²
 		addWidget(dialog);
 
 		Font f = new Font("", Font.PLAIN, 22);
@@ -138,11 +140,17 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		image.setRelativePosition(0.3f, 0.5f);
 		image.setSize(400, 400);
 		canvas.addWidget(image);
+		seikai.play();
 		repaint();
 	}
 
 	public void batsu() {
-
+		RWTImage image = new RWTImage("data\\images\\batsu.png");
+		image.setRelativePosition(0.3f, 0.5f);
+		image.setSize(400, 400);
+		canvas.addWidget(image);
+		batsu.play();
+		repaint();
 	}
 
 	public void showOption(int n, String option) {
@@ -164,6 +172,7 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 			cursorMoveDown();
 			sentaku4.play();
 		}
+		
 	}
 
 	@Override

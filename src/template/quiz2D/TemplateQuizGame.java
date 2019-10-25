@@ -13,15 +13,18 @@ import framework.view3D.Camera3D;
 
 public class TemplateQuizGame extends SimpleScenarioGame {
 	private RWTFrame3D frame;
-	int life = 3;//c‹@
+	private Sound3D startBGM =BGM3D.registerBGM("data\\sound\\sentou2.wav");
+	private Sound3D endBGM =BGM3D.registerBGM("data\\sound\\gameover3.wav");
+	private Sound3D clearBGM =BGM3D.registerBGM("data\\sound\\clear.wav");
 
+	int life = 3;//æ®‹æ©Ÿ
 
 	@Override
 	public void init(Universe universe, Camera3D camera) {
-		// ƒVƒiƒŠƒI‚Ìİ’è
+		// ã‚·ãƒŠãƒªã‚ªã®è¨­å®š
 		setScenario("data\\TemplateQuiz\\scenario.xml");
 		container.setScenario(scenario);
-		scenario.fire("ŠJn");
+		scenario.fire("é–‹å§‹");
 
 	}
 
@@ -51,7 +54,12 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 	@Override
 	public void action(String action, Event event, ScenarioState nextState) {
-		// ƒVƒiƒŠƒIis‚É‚æ‚é¢ŠE‚Ö‚Ìì—p‚ğ‚±‚±‚É‘‚­
+		// ã‚·ãƒŠãƒªã‚ªé€²è¡Œã«ã‚ˆã‚‹ä¸–ç•Œã¸ã®ä½œç”¨ã‚’ã“ã“ã«æ›¸ã
+
+		if (action.equals("openDialog")) {
+			BGM3D.playBGM(startBGM);
+			((QuizGameContainer)container).haikei();
+
 
 
 		if (action.equals("right")) {
@@ -71,18 +79,31 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 		}
 
 		if(life==0) {
-			scenario.go("I—¹");
+			scenario.go("çµ‚äº†");
 			life=3;
 		}
 
 		if(action.equals("fin")) {
 			System.exit(0);
 		}
-
+		if(action.equals("wrong")) {
+			((QuizGameContainer)container).batsu();
+			BGM3D.playBGM(endBGM);
+			
+		}
+		if(action.equals("righta")) {
+			BGM3D.playBGM(clearBGM);
+		}
+		
+		if(action.equals("right2a")) {
+			BGM3D.playBGM(startBGM);
+			((QuizGameContainer)container).haikei();
+			((QuizGameContainer)container).wave2enemy();
+		}
 	}
 
 	/**
-	 * ƒQ[ƒ€‚ÌƒƒCƒ“
+	 * ã‚²ãƒ¼ãƒ ã®ãƒ¡ã‚¤ãƒ³
 	 *
 	 * @param args
 	 */
