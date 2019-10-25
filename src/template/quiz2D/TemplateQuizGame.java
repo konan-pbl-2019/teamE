@@ -55,10 +55,10 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 
 
 		if (action.equals("right")) {
-			((QuizGameContainer)container).hp(life);
+			//((QuizGameContainer)container).hp(life);
 		} else if (action.equals("wrong")) {
 			life--;
-			((QuizGameContainer)container).hp(life);
+		//	((QuizGameContainer)container).hp(life);
 		}
 
 
