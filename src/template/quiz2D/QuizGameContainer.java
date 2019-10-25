@@ -36,17 +36,17 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		canvas.setRelativeSize(1.0f, 1.0f);		// 3D表示部のサイズ
 		addCanvas(canvas);
 
-	
+
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
 		image.setRelativePosition(0.0f, -0.1f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
-		
+
 		dialog.setRelativePosition(0.2f, 0.75f);	// ダイアログ
 		dialog.setFont(new Font("", Font.PLAIN, 12));	// 文字のフォント
 		dialog.setColor(Color.WHITE);				// 文字の色
 		addWidget(dialog);
-		
+
 		Font f = new Font("", Font.PLAIN, 30);
 		optionButtons[0] = new RWTButton("1");
 		optionButtons[0].setFont(f);
@@ -75,14 +75,14 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		optionButtons[3].setRelativeHeight(0.08f);
 		optionButtons[3].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[3], 1, 1);
-		
-		
+
+
 		addWidgetOnBack(image);
 
 
 		repaint();
 	}
-	
+
 	public void wave1enemy() {
 		RWTImage image2 = new RWTImage("data\\images\\wave1.png");
 		image2.setRelativePosition(0.4f, 0.4f);
@@ -111,19 +111,19 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		canvas.addWidget(image);
 		repaint();
 	}
-	
+
 	public void seikai() {
-		RWTImage image = new RWTImage("data\\images\\m101.jpg");
-		image.setRelativePosition(0.5f, 0.5f);
-		image.setSize(100, 100);
+		RWTImage image = new RWTImage("data\\images\\seikai.png");
+		image.setRelativePosition(0.3f, 0.5f);
+		image.setSize(400, 400);
 		canvas.addWidget(image);
 		repaint();
 	}
-	
+
 	public void batsu() {
-		
+
 	}
-	
+
 	public void showOption(int n, String option) {
 		optionButtons[n].setLabel(option);
 	}
