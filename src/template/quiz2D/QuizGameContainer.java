@@ -77,9 +77,11 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		optionButtons[3].setRelativeHeight(0.08f);
 		optionButtons[3].setRelativeWidth(0.2f);
 		addSelectableWidget(optionButtons[3], 1, 1);
-
-
+		RWTImage image10 = new RWTImage("data\\images\\box_blue.png");
+		image10.setRelativePosition(0.0f, 0.1f);
+		image10.setSize(1000, 1000);
 		addWidgetOnBack(image);
+		addWidgetOnBack(image10);
 
 
 		repaint();
