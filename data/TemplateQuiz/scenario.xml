@@ -29,19 +29,19 @@
 			</Event>
 			<Event name="兵庫県" action="wrong" trans="終了">
 			</Event>
-			<Event name="大阪都" action="right1" trans="w1一問目正解">
+			<Event name="大阪都" action="right10" trans="w1一問目正解">
 			</Event>
 			<Event name="北海道" action="wrong" trans="終了">
 			</Event>
 		</State>
 		<State name="w1一問目正解" message="正解！　敵に1ダメージ！">
-		    <Event name="" trans="w1二問目">
+		    <Event name="" action="right1" trans="w1二問目">
 		    </Event>
-		    <Event name=" " trans="w1二問目">
+		    <Event name=" " action="right1" trans="w1二問目">
 		    </Event>
-		    <Event name="  " trans="w1二問目">
+		    <Event name="  " action="right1" trans="w1二問目">
 		    </Event>
-		    <Event name="   " trans="w1二問目">
+		    <Event name="   " action="right1" trans="w1二問目">
 		    </Event>
 		</State>
 		<State name="w1二問目" message="2020年のオリンピックの場所は？">

@@ -9,6 +9,7 @@ import framework.RWT.RWTImage;
 import framework.RWT.RWTVirtualController;
 import framework.RWT.RWTVirtualKey;
 import framework.RWT.RWTWidget;
+import framework.audio.Sound3D;
 import framework.gameMain.BaseScenarioGameContainer;
 
 /**
@@ -19,7 +20,11 @@ import framework.gameMain.BaseScenarioGameContainer;
 public class QuizGameContainer extends BaseScenarioGameContainer {
 
 	private RWTButton[] optionButtons = new RWTButton[4];
-
+	private Sound3D sentaku1=new Sound3D("data\\sound\\cursor10.wav");
+	private Sound3D sentaku2=new Sound3D("data\\sound\\cursor10.wav");
+	private Sound3D sentaku3=new Sound3D("data\\sound\\cursor10.wav");
+	private Sound3D sentaku4=new Sound3D("data\\sound\\cursor10.wav");
+	private Sound3D kettei=new Sound3D("data\\sound\\decision13.wav");
 	public QuizGameContainer() {
 		super();
 	}
@@ -107,6 +112,18 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		repaint();
 	}
 	
+	public void seikai() {
+		RWTImage image = new RWTImage("data\\images\\m101.jpg");
+		image.setRelativePosition(0.5f, 0.5f);
+		image.setSize(100, 100);
+		canvas.addWidget(image);
+		repaint();
+	}
+	
+	public void batsu() {
+		
+	}
+	
 	public void showOption(int n, String option) {
 		optionButtons[n].setLabel(option);
 	}
@@ -115,12 +132,16 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	public void keyPressed(RWTVirtualKey key) {
 		if (key.getVirtualKey() == RWTVirtualController.RIGHT) {
 			cursorMoveRight();
+			sentaku1.play();
 		} else if (key.getVirtualKey() == RWTVirtualController.LEFT) {
 			cursorMoveLeft();
+			sentaku2.play();
 		} else if (key.getVirtualKey() == RWTVirtualController.UP) {
 			cursorMoveUp();
+			sentaku3.play();
 		} else if (key.getVirtualKey() == RWTVirtualController.DOWN) {
 			cursorMoveDown();
+			sentaku4.play();
 		}
 	}
 
@@ -128,6 +149,7 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 	public void keyReleased(RWTVirtualKey key) {
 		if (key.getPlayer() == 0 && key.getVirtualKey() == RWTVirtualController.BUTTON_A) {
 			RWTWidget selected = getSelectedWidget();
+			kettei.play();
 			for (int i = 0; i < 4; i++) {
 				if (selected == optionButtons[i]) {
 					scenario.fire(optionButtons[i].getLabel());
