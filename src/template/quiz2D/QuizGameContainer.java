@@ -77,7 +77,13 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		addSelectableWidget(optionButtons[3], 1, 1);
 
 
-		addWidgetOnBack(image);
+		RWTImage window = new RWTImage("data\\images\\gamewindow.png");
+		window.setRelativePosition(0.0f, 0.65f);
+		window.setSize(990, 230);
+
+
+		addWidgetOnBack(window);
+
 
 
 		repaint();
@@ -104,13 +110,28 @@ public class QuizGameContainer extends BaseScenarioGameContainer {
 		canvas.addWidget(image4);
 		repaint();
 	}
-	public void haikei() {
+	public void haikei1() {
 		RWTImage image = new RWTImage("data\\images\\quizhaikei.jpg");
 		image.setRelativePosition(0.0f, -0.1f);
 		image.setSize(1000, 1000);
 		canvas.addWidget(image);
 		repaint();
 	}
+	public void haikei2() {
+		RWTImage image = new RWTImage("data\\images\\134747125007113227040_BG10b_80.jpg");
+		image.setRelativePosition(0.0f, -0.1f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+		repaint();
+	}
+	public void haikei3() {
+		RWTImage image = new RWTImage("data\\images\\night.jpg");
+		image.setRelativePosition(0.0f, -0.1f);
+		image.setSize(1000, 1000);
+		canvas.addWidget(image);
+		repaint();
+	}
+
 
 	public void seikai() {
 		RWTImage image = new RWTImage("data\\images\\seikai.png");
