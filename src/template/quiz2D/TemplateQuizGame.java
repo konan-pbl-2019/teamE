@@ -74,6 +74,9 @@ public class TemplateQuizGame extends SimpleScenarioGame {
 			scenario.go("èIóπ");
 		}
 
+		if(action.equals("fin")) {
+			System.exit(0);
+		}
 
 	}
 
